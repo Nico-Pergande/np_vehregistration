@@ -13,7 +13,7 @@ function getBlips()
     for k, v in pairs(Config.positions) do
         local blip = AddBlipForCoord(v.x, v.y, v.z)
 
-        SetBlipSprite(blip, 793)
+        SetBlipSprite(blip, 525)
         SetBlipScale(blip, 0.7)
         SetBlipColour(blip, 47)
         SetBlipAsShortRange(blip, true)
