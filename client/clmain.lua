@@ -18,7 +18,7 @@ function getBlips()
         SetBlipColour(blip, 47)
         SetBlipAsShortRange(blip, true)
         BeginTextCommandSetBlipName("STRING")
-        AddTextComponentString(Config.label)
+        AddTextComponentString(_U('register_menu_title'))
         EndTextCommandSetBlipName(blip)
     end
 end
