@@ -1,7 +1,7 @@
 function registerVehicle(registerMenu, ownedVeh, playerVeh, location)
-    local regMenu = _menuPool:AddSubMenu(registerMenu, ownedVeh.plate .. " jetzt anmelden", "")
+    local regMenu = _menuPool:AddSubMenu(registerMenu, ownedVeh.plate .. _U("register_vehicle_menu_item"), "")
 
-    local registerVeh = NativeUI.CreateItem("~g~Fahrzeug registrieren", "")
+    local registerVeh = NativeUI.CreateItem(_U("register_vehicle_menu_item_submit"), "")
     registerVeh:RightLabel("$" .. Config.price)
     regMenu:AddItem(registerVeh)
 
@@ -13,9 +13,9 @@ function registerVehicle(registerMenu, ownedVeh, playerVeh, location)
                 local vehicleProps = ESX.Game.GetVehicleProperties(playerVeh)
                 TriggerServerEvent("np_vehregistration:updatePlate", ownedVeh.plate, newPlate, Config.price)
                 _menuPool:CloseAllMenus()
-                TriggerEvent("city_notification:push", "#F1C40F", Config.label, "Du hast dein Fahrzeug für $" .. Config.price .. " angemeldet. <br>neues Kennzeichen: " .. newPlate)
+                sendNotify("#F1C40F", Config.label, _U("register_vehicle_notify_success") .. newPlate)
             else
-                TriggerEvent("city_notification:push", "#E74C3C", Config.label, "Du hast keine $" .. Config.price .. " auf deinem Konto.")
+                sendNotify("#E74C3C", Config.label, _U("register_vehicle_notify_error") .. Config.price)
             end
         end, Config.price)
     end

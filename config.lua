@@ -1,5 +1,6 @@
 Config = {}
 
+Config.Locale = "de"
 Config.positions = { 
     {
         name = "LS",
@@ -17,3 +18,6 @@ Config.positions = {
 
 Config.label = "Fahrzeugregistrierung"
 Config.price = 5000
+
+Config.useESXNotify = true -- if this is true, Config.notifyEvent have no usage
+Config.notifyEvent = "city_notification:push" -- your default notify trigger (clientside)

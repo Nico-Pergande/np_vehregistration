@@ -7,7 +7,7 @@ function openRegistrationMenu(location)
     ESX.TriggerServerCallback("np_vehRegistration:getPlayerVehicles", function(ownedVehicles)
         local nearVehicles = ESX.Game.GetVehiclesInArea(Config.position, 20)
 
-        registerMenu = NativeUI.CreateMenu("Registrierung", "~y~Fahrzeuge in Besitz: " .. #ownedVehicles)
+        registerMenu = NativeUI.CreateMenu(_U('register_menu_title'), _U('register_menu_subtitle') .. #ownedVehicles)
         _menuPool:Add(registerMenu)
 
         for i = 1, #nearVehicles do
