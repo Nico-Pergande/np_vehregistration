@@ -12,7 +12,7 @@ function openRegistrationMenu(location)
 
         for i = 1, #nearVehicles do
             for j = 1, #ownedVehicles do
-                if string.find(ownedVehicles[j].plate, GetVehicleNumberPlateText(nearVehicles[i])) then
+                if ownedVehicles[j].plate == GetVehicleNumberPlateText(nearVehicles[i]) then
                     ownedVeh = ownedVehicles[j]
                     playerVeh = nearVehicles[i]
                     if string.starts(ownedVeh.plate, "LS ") or string.starts(ownedVeh.plate, "BC ") then
