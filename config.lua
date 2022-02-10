@@ -1,6 +1,6 @@
 Config = {}
 
-Config.Locale = "de"
+Config.Locale = "en"
 Config.positions = { 
     {
         name = "LS",
@@ -16,7 +16,6 @@ Config.positions = {
     }
 }
 
-Config.label = "Fahrzeugregistrierung"
 Config.price = 5000
 
 Config.useESXNotify = true -- if this is true, Config.notifyEvent have no usage

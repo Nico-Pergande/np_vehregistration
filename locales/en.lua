@@ -1,4 +1,4 @@
-Locales["ne"] = {
+Locales["en"] = {
     ["register_menu_title"] = "Registration",
     ["register_menu_subtitle"] = "~y~owned vehicles: ",
 

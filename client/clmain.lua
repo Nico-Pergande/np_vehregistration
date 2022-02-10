@@ -36,7 +36,7 @@ Citizen.CreateThread(function()
             end
             
             if distance <= 1.0 then
-                ESX.ShowHelpNotification("[~y~E~s~] " .. Config.label .. " - " .. v.name)
+                ESX.ShowHelpNotification("[~y~E~s~] " .. _U('register_menu_title') .. " - " .. v.name)
                 if IsControlJustPressed(0, 38) then
                     openRegistrationMenu(v.name)
                 end
