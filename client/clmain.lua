@@ -25,7 +25,6 @@ end
 
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(0)
         local playerPed = PlayerPedId()
         local playerPos = GetEntityCoords(playerPed)
         _menuPool:ProcessMenus()
@@ -42,5 +41,6 @@ Citizen.CreateThread(function()
                 end
             end
         end
+        Citizen.Wait(1)
     end
 end)

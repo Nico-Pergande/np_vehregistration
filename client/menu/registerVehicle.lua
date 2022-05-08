@@ -9,7 +9,11 @@ function registerVehicle(registerMenu, ownedVeh, playerVeh, location)
         ESX.TriggerServerCallback("np_vehRegistration:checkMoney", function(enoughMoney)
             if enoughMoney then
                 local newPlate = createPlate(location)
-                SetVehicleNumberPlateText(playerVeh, newPlate)
+                if Config.advancedParking then
+                    exports["AdvancedParking"]:UpdatePlate(playerVeh, newPlate)
+                else
+                    SetVehicleNumberPlateText(playerVeh, newPlate)
+                end
                 local vehicleProps = ESX.Game.GetVehicleProperties(playerVeh)
                 TriggerServerEvent("np_vehregistration:updatePlate", ownedVeh.plate, newPlate, Config.price)
                 _menuPool:CloseAllMenus()

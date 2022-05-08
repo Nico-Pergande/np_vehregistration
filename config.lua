@@ -19,4 +19,5 @@ Config.positions = {
 Config.price = 5000
 
 Config.useESXNotify = true -- if this is true, Config.notifyEvent have no usage
-Config.notifyEvent = "city_notification:push" -- your default notify trigger (clientside)
+Config.notifyEvent = "sd_notify:receiveMessage" -- your default notify trigger (clientside)
+Config.advancedParking = false

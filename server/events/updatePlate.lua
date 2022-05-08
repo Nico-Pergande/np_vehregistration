@@ -12,6 +12,10 @@ AddEventHandler("np_vehregistration:updatePlate", function(oldPlate, newPlate, p
             ['@vehicle'] = json.encode(vehMods),
             ['@oldPlate'] = tostring(oldPlate)
         })
+        MySQL.Async.execute('UPDATE inventories SET identifier=@newPlate WHERE identifier=@oldPlate', {
+            ['@newPlate'] = tostring(newPlate),
+            ['@oldPlate'] = tostring(oldPlate)
+        })
     end)
     local xPlayer = ESX.GetPlayerFromId(source)
     xPlayer.removeAccountMoney('bank', price)
